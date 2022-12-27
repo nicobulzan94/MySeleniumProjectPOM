@@ -6,6 +6,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import pages.HomePage;
+import pages.LoginPage;
 
 public class LoginTest {
     private WebDriver driver;
@@ -23,15 +25,18 @@ public class LoginTest {
 
     @Test
     public void loginWithNoEmailOrPass() throws InterruptedException {
-        driver.findElement(By.cssSelector(".skip-link.skip-account .label")).click();
-        driver.findElement(By.cssSelector("#header-account .links li:nth-child(6) a")).click();
-        driver.findElement(By.id("send2")).click();
+        HomePage homePage = new HomePage(driver);
+        LoginPage loginPage = new LoginPage(driver);
+
+        homePage.clickAccountButton();
+        homePage.clickLoginLink();
+        loginPage.clickLoginButton();
+
         Thread.sleep(2000);
 
         WebElement fillInRequiredField = driver.findElement(By.id("advice-required-entry-email"));
         String expectedText = "This is a required field.";
         String actualText = fillInRequiredField.getText();
-
         Assert.assertEquals(expectedText,actualText);
 
 
@@ -40,19 +45,20 @@ public class LoginTest {
 
     @Test
     public void loginWithInvalidEmail() throws InterruptedException {
-        driver.findElement(By.cssSelector(".skip-link.skip-account .label")).click();
-        driver.findElement(By.cssSelector("#header-account .links li:nth-child(6) a")).click();
-        driver.findElement(By.id("email")).sendKeys("te@yopmail.com");
-        driver.findElement(By.id("pass")).sendKeys("test123");
-        driver.findElement(By.id("send2")).click();
+        HomePage homePage = new HomePage(driver);
+        LoginPage loginPage = new LoginPage(driver);
+
+        homePage.clickAccountButton();
+        homePage.clickLoginLink();
+        loginPage.setEmailField("te@yopmail.com");
+        loginPage.setPasswordField("test123");
+        loginPage.clickLoginButton();
 
         Thread.sleep(2000);
 
         WebElement invalidLoginTextElement = driver.findElement(By.cssSelector(".error-msg span"));
-
         String expectedText = "Invalid login or password.";
         String actualText = invalidLoginTextElement.getText();
-
         Assert.assertEquals(expectedText,actualText);
 
 
@@ -61,19 +67,20 @@ public class LoginTest {
     @Test
     public void loginWithValidData() throws InterruptedException {
 
-        driver.findElement(By.cssSelector(".skip-link.skip-account .label")).click();
-        driver.findElement(By.cssSelector("#header-account .links li:nth-child(6) a")).click();
-        driver.findElement(By.id("email")).sendKeys("test@yopmail.com");
-        driver.findElement(By.id("pass")).sendKeys("test123");
-        driver.findElement(By.id("send2")).click();
+        HomePage homePage = new HomePage(driver);
+        LoginPage loginPage = new LoginPage(driver);
+
+        homePage.clickAccountButton();
+        homePage.clickLoginLink();
+        loginPage.setEmailField("test@yopmail.com");
+        loginPage.setPasswordField("test123");
+        loginPage.clickLoginButton();
 
         Thread.sleep(2000);
 
         WebElement welcomeTextElement = driver.findElement(By.cssSelector(".welcome-msg .hello strong"));
-
         String expectedText = "Hello, test test tester!";
         String actualText = welcomeTextElement.getText();
-
         Assert.assertEquals(expectedText,actualText);
 
         /*
