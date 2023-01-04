@@ -14,20 +14,5 @@ public class HomePage {
     }
 
 
-    @FindBy(css = ".skip-account .label")
-    private WebElement accountButton;
-
-    @FindBy(css = "[title='Log In']")
-    private WebElement loginLink;
-
-
-
-    public void clickAccountButton() {
-        accountButton.click();
-    }
-
-    public void clickLoginLink() {
-        loginLink.click();
-    }
 
 }
