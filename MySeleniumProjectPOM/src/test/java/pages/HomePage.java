@@ -13,6 +13,31 @@ public class HomePage {
         PageFactory.initElements(driver,this);
     }
 
+    @FindBy(css = ".product-name a[title = 'Elizabeth Knit Top']")
+    private WebElement elizabethKnitTop;
+    @FindBy(css = ".swatch-label [alt = Red]")
+    private WebElement elizColorSwatch;
+    @FindBy(id = "option79")
+    private WebElement elizSize;
+    @FindBy(css = ".add-to-cart .button.btn-cart")
+    private WebElement atoEliz;
+
+    public void clickElizabethKnitTop() {
+        elizabethKnitTop.click();
+    }
+
+    public void clickElizColorSwatch() {
+        elizColorSwatch.click();
+    }
+
+    public void clickElizSize() {
+        elizSize.click();
+    }
+
+    public void clickATOElizButton() {
+        atoEliz.click();
+    }
+
 
 
 }

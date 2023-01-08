@@ -38,15 +38,15 @@ public class MenNewArrivalsPage {
     private WebElement reviewAcceptedForModerationMsg;
 
 
-    public void getLinenBlazer() {
+    public void clickLinenBlazer() {
         linenBlazer.click();
     }
 
-    public void getAddYourReview() {
+    public void clickAddYourReview() {
         addYourReview.click();
     }
 
-    public void getSubmitReviewButton() {
+    public void clickSubmitReviewButton() {
         submitReviewButton.click();
     }
 
@@ -58,15 +58,15 @@ public class MenNewArrivalsPage {
         return entryReviewErrMsg.getText();
     }
 
-    public void getRadioButtonPrice() {
+    public void clickRadioButtonPrice() {
         radioButtonPrice.click();
     }
 
-    public void getRadioButtonValue() {
+    public void clickRadioButtonValue() {
         radioButtonValue.click();
     }
 
-    public void getRadioButtonQuality() {
+    public void clickRadioButtonQuality() {
         radioButtonQuality.click();
     }
 

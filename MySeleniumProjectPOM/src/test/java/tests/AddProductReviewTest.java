@@ -13,7 +13,7 @@ import org.openqa.selenium.interactions.Actions;
 import pages.LoginPage;
 import pages.MenNewArrivalsPage;
 
-public class AddProductReview {
+public class AddProductReviewTest {
 
     private WebDriver driver;
     private Actions actions;
@@ -45,8 +45,8 @@ public class AddProductReview {
         actions.moveToElement(newArrivals).perform();
         newArrivals.click();
 
-        menNewArrivalsPage.getLinenBlazer();
-        menNewArrivalsPage.getAddYourReview();
+        menNewArrivalsPage.clickLinenBlazer();
+        menNewArrivalsPage.clickAddYourReview();
 
 
     }
@@ -56,7 +56,7 @@ public class AddProductReview {
 
         MenNewArrivalsPage menNewArrivalsPage = new MenNewArrivalsPage(driver);
 
-        menNewArrivalsPage.getSubmitReviewButton();
+        menNewArrivalsPage.clickSubmitReviewButton();
 
         Assert.assertEquals("Please select one of each of the ratings above",menNewArrivalsPage.getRatingsErrMsg());
         Assert.assertEquals("THIS IS A REQUIRED FIELD.",menNewArrivalsPage.getEntryReviewErrMsg());
@@ -68,12 +68,12 @@ public class AddProductReview {
 
         MenNewArrivalsPage menNewArrivalsPage = new MenNewArrivalsPage(driver);
 
-        menNewArrivalsPage.getRadioButtonPrice();
-        menNewArrivalsPage.getRadioButtonValue();
-        menNewArrivalsPage.getRadioButtonQuality();
+        menNewArrivalsPage.clickRadioButtonPrice();
+        menNewArrivalsPage.clickRadioButtonValue();
+        menNewArrivalsPage.clickRadioButtonQuality();
         menNewArrivalsPage.setReviewField("I believe that clothes should not be this expensive because there are things in life that are more important.");
         menNewArrivalsPage.setSummaryField("Product is great quality but too expensive.");
-        menNewArrivalsPage.getSubmitReviewButton();
+        menNewArrivalsPage.clickSubmitReviewButton();
 
         Assert.assertEquals("Your review has been accepted for moderation.",menNewArrivalsPage.getReviewAcceptedForModerationMsg());
 

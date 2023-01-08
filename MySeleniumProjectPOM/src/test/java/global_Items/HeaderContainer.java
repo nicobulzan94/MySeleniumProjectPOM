@@ -29,6 +29,15 @@ public class HeaderContainer {
     private WebElement searchBarField;
     @FindBy(css = ".button.search-button")
     private WebElement searchBarIcon;
+    @FindBy(css = ".header-minicart .label")
+    private WebElement cartButton;
+    @FindBy(css = ".minicart-wrapper .empty")
+    private WebElement noItemsInCartMsg;
+    @FindBy(css = ".top-link-cart")
+    private WebElement myCartLink;
+    @FindBy(css = ".logo")
+    private WebElement madisonIslandLogo;
+
 
     public void clickAccountButton() {
         accountButton.click();
@@ -56,6 +65,21 @@ public class HeaderContainer {
 
     public void clickSearchBarIcon() {
         searchBarIcon.click();
+    }
+
+    public void clickCartButton() {
+        cartButton.click();
+    }
+
+    public String setNoItemsInCartMsg() {
+        return noItemsInCartMsg.getText();
+    }
+
+    public void clickMyCartLink() {
+        myCartLink.click();
+    }
+    public void clickMadisonIslandLogo() {
+        madisonIslandLogo.click();
     }
 
 
