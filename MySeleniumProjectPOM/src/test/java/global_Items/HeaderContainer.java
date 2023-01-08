@@ -17,18 +17,18 @@ public class HeaderContainer {
 
     @FindBy(css = ".skip-account .label")
     private WebElement accountButton;
-
     @FindBy(css = "[title='Log In']")
     private WebElement loginLink;
-
     @FindBy(css = "#header-account .links li:nth-child(5) a")
     private WebElement registerLink;
-
     @FindBy(css = ".nav-primary li.parent:nth-child(5) a")
     private WebElement saleHeaderLink;
-
     @FindBy(css = "a[href=http://testfasttrackit.info/selenium-test/wishlist/]")
     private WebElement wishListLink;
+    @FindBy(id = "search")
+    private WebElement searchBarField;
+    @FindBy(css = ".button.search-button")
+    private WebElement searchBarIcon;
 
     public void clickAccountButton() {
         accountButton.click();
@@ -48,6 +48,14 @@ public class HeaderContainer {
 
     public void clickWishListLink() {
         wishListLink.click();
+    }
+
+    public void setSearchBarField(String value) {
+        searchBarField.sendKeys(value);
+    }
+
+    public void clickSearchBarIcon() {
+        searchBarIcon.click();
     }
 
 

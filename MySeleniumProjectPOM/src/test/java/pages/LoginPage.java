@@ -17,10 +17,8 @@ public class LoginPage {
 
     @FindBy(id = "email")
     private WebElement emailField;
-
     @FindBy(id = "pass")
     private WebElement passwordField;
-
     @FindBy(id = "send2")
     private WebElement loginButton;
 

@@ -20,6 +20,7 @@ public class WishListPage {
     @FindBy(css = ".cart-cell .button.btn-cart")
     private WebElement atoFromWishListPg;
 
+
     public String getMyWishListTitle() {
         return myWishListTitle.getText();
     }

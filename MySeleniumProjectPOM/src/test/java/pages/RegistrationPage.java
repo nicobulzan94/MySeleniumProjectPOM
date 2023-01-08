@@ -16,25 +16,18 @@ public class RegistrationPage {
 
     @FindBy(id = "firstname")
     private WebElement firstNameField;
-
     @FindBy(id = "lastname")
     private WebElement lastNameField;
-
     @FindBy(id = "email_address")
     private WebElement emailField;
-
     @FindBy(id = "password")
     private WebElement passwordField;
-
     @FindBy(id = "confirmation")
     private WebElement passwordConfirmationField;
-
     @FindBy(id = "is_subscribed")
     private WebElement newsletterCheckbox;
-
     @FindBy(css = ".buttons-set .button")
     private WebElement registerButton;
-
     @FindBy(css = "p.required")
     private WebElement requiredFields;
 

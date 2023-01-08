@@ -16,10 +16,8 @@ public class AccountPage {
 
     @FindBy(id = "advice-required-entry-email")
     private WebElement fillInRequiredField;
-
     @FindBy(css = ".error-msg span")
     private WebElement invalidLoginTextElement;
-
     @FindBy(css = ".welcome-msg .hello strong")
     private WebElement welcomeTextElement;
 
